@@ -1,8 +1,8 @@
-# Building data pipelines with dbt Core and DuckDB
+# Building data pipelines with dbt Core and Snowflake
 ### Presentation: [{ YOUR PRESENTATION NAME }](workshop/presentation_template.pdf)
 
 ## Workshop description
-This hands-on workshop will introduce you to the fundamentals of dbt Core for building data pipelines. You will learn how to load data, create data models, add data quality tests and documentation using dbt Core with DuckDB as your database.
+This hands-on workshop will introduce you to the fundamentals of dbt Core for building data pipelines. You will learn how to load data, create data models, add data quality tests and documentation using dbt Core and Snowflake
 
 ## Requirements
 * PyLadies Amsterdam uses [uv](https://docs.astral.sh/uv/) for dependency management
