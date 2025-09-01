@@ -21,7 +21,7 @@ The data sources for this workshop are stored in the `workshop/datasources` fold
 * Basic knowledge of SQL
 
 ## Usage
-Run the following code:
+Run the following code to clone the workshop repo:
 ```bash
 git clone https://github.com/pyladiesams/data-pipelines-with-dbtcore-snowflake-sep2025
 cd data-pipelines-with-dbtcore-snowflake-sep2025
