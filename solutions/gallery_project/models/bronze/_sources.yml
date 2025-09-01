@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: gallery_data
+    database: PROD_RAW
+    schema: DBT_WORKSHOP       # or your schema name if different
+    tables:
+      - name: artist_profiles
+      - name: artwork_inventory
+      - name: customer_data
+      - name: sales_transactions

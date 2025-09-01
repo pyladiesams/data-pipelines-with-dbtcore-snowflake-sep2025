@@ -1,0 +1,118 @@
+version: 2
+
+models:
+  - name: bronze__vw_artist_profiles
+    description: Staging model for artist profiles. One row per artist.
+    config:
+      database: BRONZE
+      schema: CRM_DATA
+    columns:
+      - name: artist_id
+        description: The unique identifier for an artist. This is the primary key.
+        tests:
+          - unique
+          - not_null
+
+      - name: artist_name
+        description: The name of the artist.
+        tests:
+          - not_null
+
+      - name: artist_tier
+        description: The career tier of the artist (e.g., Emerging, Established).
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["Emerging", "Mid-Career", "Established", "Guest"]
+
+      - name: birth_year
+        description: The year the artist was born.
+
+      - name: country
+        description: The artist's country of origin.
+
+      - name: biography
+        description: A short biography of the artist.
+
+  - name: bronze__vw_artwork_inventory
+    description: Staging model for the gallery's artwork inventory. One row per piece of artwork.
+    config:
+      database: BRONZE
+      schema: CRM_DATA
+    columns:
+      - name: artwork_id
+        description: The unique identifier for an artwork. This is the primary key.
+        tests:
+          - unique
+          - not_null
+
+      - name: title
+        description: The title of the artwork.
+        tests:
+          - not_null
+
+      - name: artist_id
+        description: The foreign key referencing the artist who created the artwork.
+        tests:
+          - not_null
+
+      - name: category_id
+        description: The foreign key referencing the artwork's category.
+        tests:
+          - not_null
+
+      - name: inventory_status
+        description: The current status of the artwork in the inventory.
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["Sold", "In Stock"]
+
+      - name: retail_price
+        description: The listed retail price of the artwork.
+        tests:
+          - not_null
+
+  - name: bronze__vw_sales_transactions
+    description: Staging model for individual sales transactions. One row per sale.
+    config:
+      database: BRONZE
+      schema: CRM_DATA
+    columns:
+      - name: transaction_id
+        description: The unique identifier for a sales transaction. This is the primary key.
+        tests:
+          - unique
+          - not_null
+
+      - name: artwork_id
+        description: The foreign key referencing the artwork that was sold.
+        tests:
+          - not_null
+
+      - name: customer_id
+        description: The foreign key referencing the customer who made the purchase.
+        tests:
+          - not_null
+
+      - name: gallery_id
+        description: The foreign key referencing the gallery location where the sale occurred.
+        tests:
+          - not_null
+
+      - name: sale_date
+        description: The date the sale occurred.
+        tests:
+          - not_null
+
+      - name: sale_price
+        description: The final price at which the artwork was sold.
+        tests:
+          - not_null
+
+      - name: payment_method
+        description: The method of payment used for the transaction.
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["Cash", "Credit Card", "Debit Card", "Wire Transfer"]
