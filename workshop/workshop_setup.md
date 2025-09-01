@@ -102,7 +102,7 @@ We'll use environment variables to securely manage our Snowflake connection deta
    touch .env
    ```
 
-2. Add your Snowflake connection details to the `.env` file (replace with your actual values):
+2. Add your Snowflake connection details to the `.env` file (replace with your actual values for Snowflake account ID, username and password):
 
   ```bash
   export DBT_PROFILES_DIR=dbt_profiles
