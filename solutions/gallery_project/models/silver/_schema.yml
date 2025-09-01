@@ -1,0 +1,61 @@
+version: 2
+
+models:
+  - name: silver__dim_artist
+    description: This table stores raw data about artwork sales
+    config:
+      database: SILVER
+      schema: DIMENSIONS
+    columns:
+      - name: artist_id
+        description: "The unique identifier for an artist."
+        tests:
+          - unique
+          - not_null
+
+  - name: silver__dim_artwork
+    description: This table stores raw data about artworks
+    config:
+      database: SILVER
+      schema: DIMENSIONS
+    columns:
+      - name: artwork_id
+        description: "The unique identifier for an artwork."
+        tests:
+          - unique
+          - not_null
+      - name: artist_id
+        description: "Foreign key to the dim_artist table."
+        tests:
+          - relationships:
+              to: ref('silver__dim_artist')
+              field: artist_id
+
+  - name: silver__fact_daily_sales
+    description: This table stores raw data about customers
+    config:
+      database: SILVER
+      schema: FACTS
+    columns:
+      - name: transaction_id
+        description: "The unique identifier for a sales transaction."
+        tests:
+          - unique
+          - not_null
+      - name: artwork_id
+        description: "Foreign key to the dim_artwork table."
+        tests:
+          - relationships:
+              to: ref('silver__dim_artwork')
+              field: artwork_id
+      - name: artist_id
+        description: "Foreign key to the dim_artist table. Denormalized for easier analysis."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('silver__dim_artist')
+              field: artist_id
+      - name: sale_price
+        description: "The price at which the artwork was sold."
+      - name: commission_amount
+        description: "The commission amount earned by the gallery from the sale."      

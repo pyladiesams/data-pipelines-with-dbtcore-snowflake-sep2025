@@ -1,0 +1,11 @@
+category_id,category_name,description
+1,Painting,Works created using paint on surfaces such as canvas or wood
+2,Sculpture,"Three-dimensional works created from materials like stone, metal, or wood"
+3,Photography,Artworks created using photographic processes
+4,Drawing,"Works created using pencil, ink, charcoal, or similar media"
+5,Print,"Artworks produced by printmaking techniques such as etching, lithography, or screenprint"
+6,Mixed Media,Artworks using a combination of different materials or techniques
+7,Digital Art,Artworks created or presented using digital technology
+8,Textile,"Works created using fabric, thread, or fiber techniques"
+9,Ceramics,Artworks made from clay and fired in a kiln
+10,Glass,Artworks created primarily from glass

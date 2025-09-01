@@ -1,0 +1,6 @@
+artist_tier,commission_rate,description
+Emerging,0.40,Emerging artists with limited exhibition history
+Mid-Career,0.50,Artists with several exhibitions and growing reputation
+Established,0.60,Established artists with significant recognition
+Guest,0.35,Guest or one-off exhibiting artists
+Online,0.30,Sales made exclusively through online channels
