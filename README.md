@@ -1,5 +1,5 @@
 # Building data pipelines with dbt Core and Snowflake
-### Presentation: [Building Data Pipelines with dbt Core and Snowflake](https://github.com/pyladiesams/data-pipelines-with-dbtcore-snowflake-sep2025/blob/main/workshop/Snowflake_dbtcore_PyLadies%20presentation_September_2025.pdf)
+### Presentation: [Building Data Pipelines with dbt Core and Snowflake](https://github.com/pyladiesams/data-pipelines-with-dbtcore-snowflake-sep2025/blob/1f9b11c0102f3b53da0fa0ae70a2e030836fdf30/workshop/Snowflake_dbtcore_PyLadies%20presentation_September_2025.pdf)
 
 ## Workshop description
 This hands-on workshop will introduce you to the fundamentals of dbt Core for building data pipelines. You will learn how to load data, create data models, add data quality tests and documentation using dbt Core and Snowflake. By the end of this workshop, you'll understand how to transform raw data into analytics-ready models using industry best practices.
