@@ -8,7 +8,7 @@ These setup instructions will guide you through the core steps required to use d
 
 ## Step 1. Create a trial account with Snowflake
 
- - Go to the [Snowflake sign up page](https://signup.snowflake.com/) to create a trial account. The trial account is **valid for 30 days** and includes $400 worth of free usage. You new accoutn should have the follwoign settings:
+ - Go to the [Snowflake sign up page](https://signup.snowflake.com/) to create a trial account. The trial account is **valid for 30 days** and includes $400 worth of free usage. You new account should have the following settings:
     - Snowflake edition: Standard
     - Cloud provider: any cloud provider will work for this workshop
     - Region: any siutable region based on your location
