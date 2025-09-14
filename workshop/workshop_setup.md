@@ -1,10 +1,18 @@
 # Workshop requirements setup
 
 These setup instructions will guide you through the core steps required to use dbt Core with Snowflake:
+- Step 0. [Clone the workshop repository](#step-0-clone-the-workshop-repository)
 - Step 1. [Create a Snowflake trial account](#step-1-create-a-trial-account-with-snowflake)
 - Step 2. [Create a PROD_RAW database in Snowflake and load sample data](#step-2-create-a-prod_raw-database-in-snowflake-and-load-sample-data)
 - Step 3. [Install dbt Core locally](#step-3-install-dbt-core)
 - Step 4. [Configure your dbt environment](#step-4-configure-your-dbt-environment)
+
+## Step 0. Clone the workshop repository
+Clone or download this workshop repository to your local machine:
+  ```bash
+  git clone https://github.com/your-repo/data-pipelines-with-dbtcore-snowflake-sep2025.git
+  cd data-pipelines-with-dbtcore-snowflake-sep2025
+  ```
 
 ## Step 1. Create a trial account with Snowflake
 
@@ -30,14 +38,14 @@ Now that your account is active, we need to load the source data that will be us
 
   ![Create a database in Snowflake](images/snowflake_create_database.png)
 
-2. Create a new schema in this database called **DBT_WORKSHOP**:
+2. Create a new schema in this database called **SOURCE_DATA**:
  - On the **PROD_RAW** database page, click the **+ Schema** blue button in the top right corner
- - In the **Create Schema** dialog, enter the desired schema name (**DBT_WORKSHOP**) and click the **Finish** button
+ - In the **Create Schema** dialog, enter the desired schema name (**SOURCE_DATA**) and click the **Finish** button
 
    ![Create a schema in Snowflake](images/snowflake_create_schema.png)
 
-3. Now let's load the source data to our new **DBT_WORKSHOP** schema:
- - Select the **PROD_RAW** database and **DBT_WORKSHOP** schema
+3. Now let's load the source data to our new **SOURCE_DATA** schema:
+ - Select the **PROD_RAW** database and **SOURCE_DATA** schema
  - Click the **Create** blue button in the top right corner, and select **Table** > **From File** option
 
    ![Create a table in Snowflake](images/snowflake_create_table.png)
@@ -96,7 +104,13 @@ For this workshop, we'll set up a local profiles.yml file to connect to Snowflak
 
 We'll use environment variables to securely manage our Snowflake connection details. This approach prevents sensitive information from being stored directly in configuration files.
 
-1. Create a `.env` file in the project root (workshop/gallery_project) to store your environment variables:
+First, navigate to the gallery_project directory where we'll run all dbt commands:
+
+```bash
+cd workshop/gallery_project
+```
+
+1. From the `workshop/gallery_project` directory, create a `.env` file to store your environment variables:
 
    ```bash
    touch .env
@@ -150,7 +164,7 @@ See details on how to find your Snowflake account ID [here](https://docs.getdbt.
   $env:SCHEMA="DBT_DEV"
   ```
 
-4. Test your connection to Snowflake:
+4. Test your connection to Snowflake (from the `workshop/gallery_project` directory):
 
   ```bash
   dbt debug
@@ -159,5 +173,9 @@ See details on how to find your Snowflake account ID [here](https://docs.getdbt.
 The `DBT_PROFILES_DIR` environment variable tells dbt to look for the profiles.yml file in the `dbt_profiles` directory instead of the default location (`~/.dbt/`).
 
 If the connection is successful, you should see "Connection test: OK" in the output. This confirms that dbt can connect to your Snowflake account using the environment variables.
+
+## Next steps
+
+All dbt commands in the workshop will be run from the `workshop/gallery_project` directory. Make sure you're in this directory whenever you need to execute dbt commands.
 
 Now you're ready for the workshop!
