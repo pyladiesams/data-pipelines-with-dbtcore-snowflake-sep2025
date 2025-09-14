@@ -38,6 +38,8 @@ Now that your account is active, we need to load the source data that will be us
 
   ![Create a database in Snowflake](images/snowflake_create_database.png)
 
+  There have been some changes recently in the Snowflake's UI, so your sidebar might look different from the image above. If you don't have the **Data** tab, you should select the **Catalog** tab instead. The rest of the steps are the same as above. 
+
 2. Create a new schema in this database called **SOURCE_DATA**:
  - On the **PROD_RAW** database page, click the **+ Schema** blue button in the top right corner
  - In the **Create Schema** dialog, enter the desired schema name (**SOURCE_DATA**) and click the **Finish** button
