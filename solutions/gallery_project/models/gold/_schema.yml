@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: gold__monthly_commission_report
+    description: "Monthly aggregated report of sales and commissions per artist."
+    config:
+      database: GOLD
+      schema: REPORTS
+    columns:
+      - name: report_month
+        description: "The first day of the month for which the report is generated."
+        tests:
+          - not_null
+      - name: artist_id
+        description: "The unique identifier for an artist."
+        tests:
+          - not_null
+      - name: total_sales_amount
+        description: "The total value of artwork sold by the artist in that month."
+      - name: total_commission_amount
+        description: "The total commission earned by the gallery from the artist's sales in that month."

@@ -1,0 +1,57 @@
+version: 2
+
+seeds:
+  - name: artwork_categories
+    description: "A reference table that defines the different categories of artwork, such as Painting or Sculpture."
+    config:
+      database: BRONZE
+      schema: MANUAL_INPUT
+    columns:
+      - name: category_id
+        description: "The unique identifier for the artwork category. This is the primary key."
+
+      - name: category_name
+        description: "The name of the artwork category (e.g., Painting, Sculpture)."
+
+      - name: description
+        description: "A brief text description of the artwork category."
+
+  - name: commission_rates
+    description: "A reference table defining the standard commission rate for each artist tier. This rate is used to calculate the gallery's earnings from a sale."
+    config:
+      database: BRONZE
+      schema: MANUAL_INPUT
+    columns:
+      - name: artist_tier
+        description: "The career tier of the artist. This is the primary key for this table."
+
+      - name: commission_rate
+        description: "The percentage of the sale price that the gallery receives as commission, expressed as a decimal."
+      
+      - name: description
+        description: "A brief text description of the artist tier."
+
+
+  - name: gallery_locations
+    description: "A reference table containing address and contact details for each physical gallery branch."
+    config:
+      database: BRONZE
+      schema: MANUAL_INPUT
+    columns:
+      - name: gallery_id
+        description: "The unique identifier for the gallery location. This is the primary key."
+
+      - name: location_name
+        description: "The public-facing name of the gallery location."
+
+      - name: address
+        description: "The street address of the gallery."
+
+      - name: city
+        description: "The city where the gallery is located."
+
+      - name: state
+        description: "The state or province where the gallery is located."
+          
+      - name: country
+        description: "The country where the gallery is located."
